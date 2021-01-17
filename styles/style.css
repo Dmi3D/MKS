@@ -1,3 +1,12 @@
+.carousel-caption {
+    text-shadow: 2px 2px 5px  black;
+    
+} 
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
 .carousel-image {
     object-fit: cover;
 }
