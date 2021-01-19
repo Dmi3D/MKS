@@ -4,9 +4,18 @@
 } 
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
 }
 
 .carousel-image {
     object-fit: cover;
 }
+
+.button-icon {
+    vertical-align: middle;
+}
+
+.text-large {
+    font-size: 140%;
+  }
