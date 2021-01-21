@@ -1,16 +1,19 @@
-.carousel-caption {
-    text-shadow: 2px 2px 5px  black;
-    
-} 
-
 body {
     background-color: #485461;
     background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
 }
 
+hr {
+    background-color: #ccc;
+}
+
 .carousel-image {
     object-fit: cover;
 }
+
+.carousel-caption {
+    text-shadow: 2px 2px 5px  black;
+} 
 
 .button-icon {
     vertical-align: middle;
