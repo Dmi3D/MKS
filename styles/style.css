@@ -5,7 +5,7 @@ body {
 
 hr {
     background-color: #ccc;
-    max-width: 80%
+    max-width: 95%
 }
 
 .carousel-image {
@@ -48,4 +48,8 @@ hr {
 .carousel-fade .active.carousel-item-prev {
 	transform: translateX(0);
 	transform: translate3d(0, 0, 0);
+}
+
+.container-85 {
+    width: 85%;
 }
