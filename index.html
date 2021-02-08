@@ -23,92 +23,102 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="500">
   <!-- Navigation Bar -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark py-3"
     style="background-color: #485461; background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);">
-    <img src="./images/logo/whitelogo.png" href="#" width="120" height="100%" class="d-inline-block align-top" alt="">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <a href="#top" role="button">
+      <img src="./images/logo/whitelogo.png" href="#" width="120" height="100%" class="d-inline-block align-top" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
+      aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse" id="mainNav">
       <ul class="navbar-nav ml-auto text-center">
-        <li class="nav-item active px-3">
-          <a class="text-large nav-link text-uppercase" href="#">Home<span class="sr-only">(current)</span></a>
+        <li class="nav-item px-3">
+          <a class="text-large nav-link active text-uppercase" href="#top">Home</a>
         </li>
         <li class="nav-item px-3">
-          <a class="text-large nav-link text-uppercase" href="#">Projects</a>
+          <a class="text-large nav-link text-uppercase" href="#door">Doors</a>
         </li>
         <li class="nav-item px-3">
-          <a class="text-large nav-link text-uppercase" href="#">About Us</a>
+          <a class="text-large nav-link text-uppercase" href="#window">Windows</a>
         </li>
         <li class="nav-item px-3">
-          <a class="text-large nav-link text-uppercase" href="#">Contact Us</a>
+          <a class="text-large nav-link text-uppercase" href="#insulation">Insulation</a>
+        </li>
+        <li class="nav-item px-3">
+          <a class="text-large nav-link text-uppercase" href="#services">Services</a>
+        </li>
+        <li class="nav-item px-3">
+          <a class="text-large nav-link text-uppercase" href="#quote">Free Quote</a>
         </li>
       </ul>
     </div>
   </nav>
 
   <!-- Carousel -->
-  <div id="mainCarousel" class="carousel slide" data-ride="carousel" data-pause="false">
-    <ol class="carousel-indicators">
-      <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#mainCarousel" data-slide-to="1"></li>
-      <li data-target="#mainCarousel" data-slide-to="2"></li>
-      <li data-target="#mainCarousel" data-slide-to="3"></li>
-    </ol>
-    <!-- Doors Carousel -->
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="carousel-image d-block w-100" src="./images/carousel/carousel1doors.png" alt="First slide"
-          height="350">
-        <div class="container">
+  <section id="top">
+    <div id="mainCarousel" class="carousel slide" data-ride="carousel" data-pause="false">
+      <ol class="carousel-indicators">
+        <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#mainCarousel" data-slide-to="1"></li>
+        <li data-target="#mainCarousel" data-slide-to="2"></li>
+        <li data-target="#mainCarousel" data-slide-to="3"></li>
+      </ol>
+      <!-- Doors Carousel -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="carousel-image d-block w-100" src="./images/carousel/carousel1doors.png" alt="First slide"
+            height="350">
+          <div class="container">
+            <div class="carousel-caption text-center text-uppercase">
+              <h1>Door Replacements</h1>
+              <p>All doors come in a large variety of colours and styles, you certainly won't be disappointed</p>
+            </div>
+          </div>
+        </div>
+        <!-- Windows Carousel -->
+        <div class="carousel-item">
+          <img class="carousel-image d-block w-100" src="./images/carousel/carousel2windows.png" alt="Second slide"
+            height="350">
           <div class="carousel-caption text-center text-uppercase">
-            <h1>Door Replacements</h1>
-            <p>All doors come in a large variety of colours and styles, you certainly won't be disappointed</p>
+            <h1>Window Replacements</h1>
+            <p>Completely transform your home, enhance your homes energy rating, and most importantly, improve your security</p>
+          </div>
+        </div>
+        <!-- Insulation Carousel -->
+        <div class="carousel-item">
+          <img class="carousel-image d-block w-100" src="./images/carousel/carousel3insulation.png" alt="Third slide"
+            height="350">
+          <div class="carousel-caption text-center text-uppercase">
+            <h1>Insulation Services</h1>
+            <p>We offer a complete internal insulation service, using fibre glass and polyurethane insulation</p>
+          </div>
+        </div>
+        <!-- Service and Repairs Carousel -->
+        <div class="carousel-item">
+          <img class="carousel-image d-block w-100" src="./images/carousel/carousel4general.png" alt="Fourth slide"
+            height="350">
+          <div class="carousel-caption text-center text-uppercase">
+            <h1>Service and Repairs</h1>
+            <p>Unfortunately over time, standard wear and tear has a negative effect on doors and windows</p>
           </div>
         </div>
       </div>
-      <!-- Windows Carousel -->
-      <div class="carousel-item">
-        <img class="carousel-image d-block w-100" src="./images/carousel/carousel2windows.png" alt="Second slide"
-          height="350">
-        <div class="carousel-caption text-center text-uppercase">
-          <h1>Window Replacements</h1>
-          <p>Completely transform your home, enhance your homes energy rating, and most importantly, improve your security</p>
-        </div>
-      </div>
-      <!-- Insulation Carousel -->
-      <div class="carousel-item">
-        <img class="carousel-image d-block w-100" src="./images/carousel/carousel3insulation.png" alt="Third slide"
-          height="350">
-        <div class="carousel-caption text-center text-uppercase">
-          <h1>Insulation Services</h1>
-          <p>We offer a complete internal insulation service, using fibre glass and polyurethane insulation</p>
-        </div>
-      </div>
-      <!-- Service and Repairs Carousel -->
-      <div class="carousel-item">
-        <img class="carousel-image d-block w-100" src="./images/carousel/carousel4general.png" alt="Fourth slide"
-          height="350">
-        <div class="carousel-caption text-center text-uppercase">
-          <h1>Service and Repairs</h1>
-          <p>Unfortunately over time, standard wear and tear has a negative effect on doors and windows</p>
-        </div>
-      </div>
+      <!-- Previous Button -->
+      <a class="carousel-control-prev" href="#mainCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <!-- Next Button -->
+      <a class="carousel-control-next" href="#mainCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
-    <!-- Previous Button -->
-    <a class="carousel-control-prev" href="#mainCarousel" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <!-- Next Button -->
-    <a class="carousel-control-next" href="#mainCarousel" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
+  </section>
   <!-- Introductory Information -->
   <div class="container-fluid container-85 mt-5 text-light">
     <div class="row">
@@ -123,7 +133,7 @@
         <h2 class="mt-2">Doors</h2>
         <p>Here at MKS, we offer an attractive selection of doors.</p>
         <p">All doors come in a large variety of colours and styles, you certainly won't be disappointed.</p>
-        <a class="btn btn-outline-light mt-auto mb-0" href="#" role="button">
+        <a class="btn btn-outline-light mt-auto mb-0" href="#door" role="button">
           More details
           <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             class="bi bi-chevron-double-down" viewBox="0 0 16 16">
@@ -144,7 +154,7 @@
         <h2 class="mt-2">Windows</h2>
         <p>MKS understands that choosing new windows is a very personal matter.</p>
         <p>Completely transform your home, enhance your homes energy rating, and most importantly, improve your security.</p>
-        <a class="btn btn-outline-light" href="#" role="button">
+        <a class="btn btn-outline-light" href="#window" role="button">
           More details
           <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             class="bi bi-chevron-double-down" viewBox="0 0 16 16">
@@ -166,7 +176,7 @@
         <h2 class="mt-2">Insulation Service</h2>
         <p>We offer a complete internal insulation service, using fibre glass and polyurethane insulation.</p>
         <p>From your attic down through the house, we work closely with our customers from start to finish.</p>
-        <a class="btn btn-outline-light" href="#" role="button">
+        <a class="btn btn-outline-light" href="#insulation" role="button">
           More details
           <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             class="bi bi-chevron-double-down" viewBox="0 0 16 16">
@@ -189,7 +199,7 @@
         <h2 class="mt-2">Service and Repairs</h2>
         <p>Unfortunately over time, standard wear and tear has a negative effect on doors and windows.</p>
         <p>Find out how expertise and passion can help bring your home to life.</p>
-        <a class="btn btn-outline-light" href="#" role="button">
+        <a class="btn btn-outline-light" href="#services" role="button">
           More details
           <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             class="bi bi-chevron-double-down" viewBox="0 0 16 16">
@@ -207,203 +217,211 @@
   <!-- Information -->
   <div class="container">
     <!-- Door Section -->
-    <div class="row pb-5">
-      <!-- Door Information -->
-      <div class="col-md-7">
-        <h2 class="text-light">Door Installation. <span class="text-muted">Beautiful Selection.</span></h2>
-        <p class="lead text-light">Here at <strong>MKS</strong> we offer an attractive selection of doors.</p>
-        <p class="lead text-light">These include but are not limited to,</p>
-        <ul class="lead text-light">
-          <li>UPVC Panel Doors</li>
-          <li>Part Glazed</li>
-          <li>French Doors</li>
-          <li>Patio Sliders</li>
-          <li>Popular Composite Range</li>
-        </ul>
-        <p class="lead text-light">All doors come in a large variety of colours and styles. You will certaintly not be
-          disappointed.</p>
-        <p class="lead text-light">Along with the wide range of available doors, we also supply,</p>
-        <ul class="lead text-light">
-          <li>High Security Multi-Locking Points</li>
-          <li>Energy Efficient Frames</li>
-          <li>Glass <i>(in both double & tripple glaze)</i></li>
-        </ul>
-      </div>
-      <!-- Door Carousel -->
-      <div class="col-md-5">
-        <div id="doorCarousel" class="carousel slide carousel-fade" data-ride="carousel"
-          data-pause="false">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="carousel-image d-block w-100" alt="500x500" height="500" src="./images/doors/door2.png">
+    <section id="door">
+      <div class="door-information row pb-5">
+        <!-- Door Information -->
+        <div class="col-md-7">
+          <h2 class="text-light">Door Installation. <span class="text-muted">Beautiful Selection.</span></h2>
+          <p class="lead text-light">Here at <strong>MKS</strong> we offer an attractive selection of doors.</p>
+          <p class="lead text-light">These include but are not limited to,</p>
+          <ul class="lead text-light">
+            <li>UPVC Panel Doors</li>
+            <li>Part Glazed</li>
+            <li>French Doors</li>
+            <li>Patio Sliders</li>
+            <li>Popular Composite Range</li>
+          </ul>
+          <p class="lead text-light">All doors come in a large variety of colours and styles. You will certaintly not be
+            disappointed.</p>
+          <p class="lead text-light">Along with the wide range of available doors, we also supply,</p>
+          <ul class="lead text-light">
+            <li>High Security Multi-Locking Points</li>
+            <li>Energy Efficient Frames</li>
+            <li>Glass <i>(in both double & tripple glaze)</i></li>
+          </ul>
+        </div>
+        <!-- Door Carousel -->
+        <div class="col-md-5">
+          <div id="doorCarousel" class="carousel slide carousel-fade" data-ride="carousel"
+            data-pause="false">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="carousel-image d-block w-100" alt="500x500" height="500" src="./images/doors/door2.png">
+              </div>
+              <div class="carousel-item">
+                <img class="carousel-image d-block w-100" alt="500x500" height="500" src="./images/doors/door.png">
+              </div>
+              <div class="carousel-item">
+                <img class="carousel-image d-block w-100" alt="500x500" height="500" src="./images/doors/door3.png">
+              </div>
+              <div class="carousel-item">
+                <img class="carousel-image d-block w-100" alt="500x500" height="500" src="./images/doors/door4.png">
+              </div>
+              <div class="carousel-item">
+                <img class="carousel-image d-block w-100" alt="500x500" height="500" src="./images/doors/door5.png">
+              </div>
             </div>
-            <div class="carousel-item">
-              <img class="carousel-image d-block w-100" alt="500x500" height="500" src="./images/doors/door.png">
+          </div>
+          <!-- Door Buttons -->
+          <div class="row">
+            <!-- Door Catalogue Button -->
+            <div class="col-md">
+              <a class="mt-4 btn btn-info btn-block" role="button" href="pdf/DoorCollection.pdf" target="_blank">Catalogue
+                <svg class="button-icon ml-1 mb-1" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                  fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                  <path
+                    d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                  <path
+                    d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                </svg>
+              </a>
             </div>
-            <div class="carousel-item">
-              <img class="carousel-image d-block w-100" alt="500x500" height="500" src="./images/doors/door3.png">
-            </div>
-            <div class="carousel-item">
-              <img class="carousel-image d-block w-100" alt="500x500" height="500" src="./images/doors/door4.png">
-            </div>
-            <div class="carousel-item">
-              <img class="carousel-image d-block w-100" alt="500x500" height="500" src="./images/doors/door5.png">
+            <!-- Free Quote Button -->
+            <div class="col-md">
+              <a class="mt-4 btn btn-outline-light btn-block" href="#" role="button">Free Quote
+                <svg class="button-icon ml-1 mb-1" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                  fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                  <path
+                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
-        <!-- Door Buttons -->
-        <div class="row">
-          <!-- Door Catalogue Button -->
-          <div class="col-md">
-            <a class="mt-4 btn btn-info btn-block" role="button" href="pdf/DoorCollection.pdf" target="_blank">Catalogue
-              <svg class="button-icon ml-1 mb-1" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
-                <path
-                  d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
-                <path
-                  d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
-              </svg>
-            </a>
-          </div>
-          <!-- Free Quote Button -->
-          <div class="col-md">
-            <a class="mt-4 btn btn-outline-light btn-block" href="#" role="button">Free Quote
-              <svg class="button-icon ml-1 mb-1" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                <path
-                  d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z" />
-              </svg>
-            </a>
-          </div>
-        </div>
       </div>
-    </div>
+    </section>
     <!-- Window Section -->
-    <div class="row mt-5 pb-5">
-      <!-- Window Carousel -->
-      <div class="col-md-5 order-1 order-md-0">
-        <div id="windowCarousel" class="carousel slide carousel-fade" data-ride="carousel"
-          data-pause="false">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="carousel-image d-block w-100" alt="500x500" height="500" src="./images/windows/window.png">
-            </div>
-            <div class="carousel-item">
-              <img class="carousel-image d-block w-100" alt="500x500" height="500" src="./images/windows/window2.png">
+    <section id="window">
+      <div class="row mt-5 pb-5">
+        <!-- Window Carousel -->
+        <div class="col-md-5 order-1 order-md-0">
+          <div id="windowCarousel" class="carousel slide carousel-fade" data-ride="carousel"
+            data-pause="false">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="carousel-image d-block w-100" alt="500x500" height="500" src="./images/windows/window.png">
+              </div>
+              <div class="carousel-item">
+                <img class="carousel-image d-block w-100" alt="500x500" height="500" src="./images/windows/window2.png">
+              </div>
             </div>
           </div>
+          <a class="mt-4 btn btn-outline-light btn-block" href="#" role="button">Free Quote
+            <svg class="button-icon ml-1 mb-1" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+              fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+              <path
+                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z" />
+            </svg>
+          </a>
         </div>
-        <a class="mt-4 btn btn-outline-light btn-block" href="#" role="button">Free Quote
-          <svg class="button-icon ml-1 mb-1" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-            fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-            <path
-              d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z" />
-          </svg>
-        </a>
+        <!-- Window Information -->
+        <div class="col-md-7 order-0 order-md-1">
+          <h2 class="text-light">Window Installation. <span class="text-muted">Maximum Security.</span></h2>
+          <p class="lead text-light">With <strong>MKS</strong> you get a huge range of UPVC windows in many different
+            colours and styles.</p>
+          <p class="lead text-light">All windows include,</p>
+          <ul class="lead text-light">
+            <li>High Security Multi-Locking Points <i>(with shoot bolts)</i></li>
+            <li>Double or Tripple Glazed Units</li>
+            <li>Heat Reflective Glass</li>
+            <li>A Rated for Enhanced Energy Efficiency</li>
+            <li>Popular Composite Range</li>
+          </ul>
+          <p class="lead text-light">Our windows are disigned to fit your requirements and are best styled to suit your
+            home.</p>
+        </div>
       </div>
-      <!-- Window Information -->
-      <div class="col-md-7 order-0 order-md-1">
-        <h2 class="text-light">Window Installation. <span class="text-muted">Maximum Security.</span></h2>
-        <p class="lead text-light">With <strong>MKS</strong> you get a huge range of UPVC windows in many different
-          colours and styles.</p>
-        <p class="lead text-light">All windows include,</p>
-        <ul class="lead text-light">
-          <li>High Security Multi-Locking Points <i>(with shoot bolts)</i></li>
-          <li>Double or Tripple Glazed Units</li>
-          <li>Heat Reflective Glass</li>
-          <li>A Rated for Enhanced Energy Efficiency</li>
-          <li>Popular Composite Range</li>
-        </ul>
-        <p class="lead text-light">Our windows are disigned to fit your requirements and are best styled to suit your
-          home.</p>
-      </div>
-    </div>
+    </section>
     <!-- Insulation Section -->
-    <div class="row mt-5">
-      <!-- Insulation Information -->
-      <div class="col-md-7">
-        <h2 class="text-light">Insulation Services. <span class="text-muted">Improve your BER.</span></h2>
-        <p class="lead text-light">For years we have replaced and repairs windows and doors in order to improve home energy ratings.</p>
-        <p class="lead text-light">But, we have discovered that the roof and walls lose over half the heat to the outside.</p>
-        <ul class="lead text-light">
-          <li>25% of heat is lost via the roof</li>
-          <li>35% of heat is lost via the walls</li>
-          <li>40% of heat is lost via the windows and doors</li>
-        </ul>
-        <p class="lead text-light">To tackle this, we offer a <strong>complete internal insulation service</strong>, using</p>
-        <ul class="lead text-light">
-          <li>Fibre Glass</li>
-          <li>Polyurethane Insulation</li>
-        </ul>
-        <p class="lead text-light">From your attic, right down through the house, we work closely with our customers to achieve satisfaction from start to finish.</p>
-      </div>
-      <!-- Insulation Carousel -->
-      <div class="col-md-5 mb-5">
-        <div id="insulationCarousel" class="carousel slide carousel-fade" data-ride="carousel"
-          data-pause="false">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="carousel-image d-block w-100" alt="500x500" height="500" src="./images/insulation/insulation.png">
-            </div>
-            <div class="carousel-item">
-              <img class="carousel-image d-block w-100" alt="500x500" height="500" src="./images/insulation/insulation.png">
-            </div>
-            <div class="carousel-item">
-              <img class="carousel-image d-block w-100" alt="500x500" height="500" src="./images/insulation/insulation.png">
+    <section id="insulation">
+      <div class="row mt-5">
+        <!-- Insulation Information -->
+        <div class="col-md-7">
+          <h2 class="text-light">Insulation Services. <span class="text-muted">Improve your BER.</span></h2>
+          <p class="lead text-light">For years we have replaced and repairs windows and doors in order to improve home energy ratings.</p>
+          <p class="lead text-light">But, we have discovered that the roof and walls lose over half the heat to the outside.</p>
+          <ul class="lead text-light">
+            <li>25% of heat is lost via the roof</li>
+            <li>35% of heat is lost via the walls</li>
+            <li>40% of heat is lost via the windows and doors</li>
+          </ul>
+          <p class="lead text-light">To tackle this, we offer a <strong>complete internal insulation service</strong>, using</p>
+          <ul class="lead text-light">
+            <li>Fibre Glass</li>
+            <li>Polyurethane Insulation</li>
+          </ul>
+          <p class="lead text-light">From your attic, right down through the house, we work closely with our customers to achieve satisfaction from start to finish.</p>
+        </div>
+        <!-- Insulation Carousel -->
+        <div class="col-md-5 mb-5">
+          <div id="insulationCarousel" class="carousel slide carousel-fade" data-ride="carousel"
+            data-pause="false">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="carousel-image d-block w-100" alt="500x500" height="500" src="./images/insulation/insulation.png">
+              </div>
+              <div class="carousel-item">
+                <img class="carousel-image d-block w-100" alt="500x500" height="500" src="./images/insulation/insulation.png">
+              </div>
+              <div class="carousel-item">
+                <img class="carousel-image d-block w-100" alt="500x500" height="500" src="./images/insulation/insulation.png">
+              </div>
             </div>
           </div>
+          <!-- Insulation Button -->
+          <a class="mt-4 btn btn-outline-light btn-block" href="#" role="button">Free Quote
+            <svg class="button-icon ml-1 mb-1" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+              fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+              <path
+                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z" />
+            </svg>
+          </a>
         </div>
-        <!-- Insulation Button -->
-        <a class="mt-4 btn btn-outline-light btn-block" href="#" role="button">Free Quote
-          <svg class="button-icon ml-1 mb-1" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-            fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-            <path
-              d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z" />
-          </svg>
-        </a>
       </div>
-    </div>
+    </section>
     <!-- Service and Repairs Section -->
-    <div class="row mt-5">
-      <!-- Service and Repairs Carousel -->
-      <div class="col-md-5 order-1 order-md-0">
-        <div id="serviceRepairsCarousel" class="carousel slide carousel-fade" data-ride="carousel"
-          data-pause="false">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="carousel-image d-block w-100" alt="500x500" height="500" src="./images/services/multilocking.png">
-            </div>
-            <div class="carousel-item">
-              <img class="carousel-image d-block w-100" alt="500x500" height="500" src="./images/services/lockwithhandle.png">
+    <section id="services">
+      <div class="row mt-5">
+        <!-- Service and Repairs Carousel -->
+        <div class="col-md-5 order-1 order-md-0">
+          <div id="serviceRepairsCarousel" class="carousel slide carousel-fade" data-ride="carousel"
+            data-pause="false">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="carousel-image d-block w-100" alt="500x500" height="500" src="./images/services/multilocking.png">
+              </div>
+              <div class="carousel-item">
+                <img class="carousel-image d-block w-100" alt="500x500" height="500" src="./images/services/lockwithhandle.png">
+              </div>
             </div>
           </div>
+          <a class="mt-4 btn btn-outline-light btn-block" href="#" role="button">Free Quote
+            <svg class="button-icon ml-1 mb-1" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+              fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+              <path
+                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z" />
+            </svg>
+          </a>
         </div>
-        <a class="mt-4 btn btn-outline-light btn-block" href="#" role="button">Free Quote
-          <svg class="button-icon ml-1 mb-1" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-            fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-            <path
-              d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z" />
-          </svg>
-        </a>
+        <!-- Service and Repairs Information -->
+        <div class="col-md-7 order-0 order-md-1">
+          <h2 class="text-light">Service and Repairs Installation. <span class="text-muted">No more issues.</span></h2>
+          <p class="lead text-light">Unfortunately over time, standard wear and tear has a negative effect on doors and windows, stopping them from performing their best.</p>
+          <p class="lead text-light">We provide a free call-out service to customers who are dealing with,</p>
+          <ul class="lead text-light">
+            <li>Lock Repairs</i></li>
+            <li>Replacement Handles</li>
+            <li>Patio Door Wheels</li>
+            <li>Replacement Hinges</li>
+            <li>Restrictors</li>
+            <li>Double Glazed Units</li>
+            <li>Gutter Repairs</li>
+            <li>Full Conservatory Cleaning Service</li>
+          </ul>
+          <p class="lead text-light">We offer a speedy service to get your problem out of the way in no time.</p>
+        </div>
       </div>
-      <!-- Service and Repairs Information -->
-      <div class="col-md-7 order-0 order-md-1">
-        <h2 class="text-light">Service and Repairs Installation. <span class="text-muted">No more issues.</span></h2>
-        <p class="lead text-light">Unfortunately over time, standard wear and tear has a negative effect on doors and windows, stopping them from performing their best.</p>
-        <p class="lead text-light">We provide a free call-out service to customers who are dealing with,</p>
-        <ul class="lead text-light">
-          <li>Lock Repairs</i></li>
-          <li>Replacement Handles</li>
-          <li>Patio Door Wheels</li>
-          <li>Replacement Hinges</li>
-          <li>Restrictors</li>
-          <li>Double Glazed Units</li>
-          <li>Gutter Repairs</li>
-          <li>Full Conservatory Cleaning Service</li>
-        </ul>
-        <p class="lead text-light">We offer a speedy service to get your problem out of the way in no time.</p>
-      </div>
-    </div>
+    </section>
   </div>
 
   <!-- Bootstrap JS -->

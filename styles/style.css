@@ -1,7 +1,12 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #485461;
     background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
     margin-top: 100px;
+    position: relative;
 }
 
 hr {
@@ -16,6 +21,10 @@ hr {
 .carousel-caption {
     text-shadow: 2px 2px 5px  black;
 } 
+
+section {
+    scroll-margin-top: 150px;
+}
 
 .button-icon {
     vertical-align: middle;
