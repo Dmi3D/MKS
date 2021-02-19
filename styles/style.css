@@ -32,7 +32,19 @@ section {
 
 .text-large {
     font-size: 140%;
-  }
+}
+
+.input-icon {
+    border-radius: 10px 0 0 10px;
+}
+
+.input-with-icon {
+    border-radius: 0 10px 10px 0;
+}
+
+.input-more-round {
+    border-radius: 10px 10px 10px 10px;
+}
 
 .carousel-fade .carousel-item {
 	opacity: 0;
