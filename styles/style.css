@@ -9,6 +9,17 @@ body {
     position: relative;
 }
 
+.nav-button {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-button:hover {
+    text-decoration: none;
+    color: white;
+    opacity: 80%;
+}
+
 hr {
     background-color: #ccc;
     max-width: 95%
