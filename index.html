@@ -29,8 +29,9 @@
   <script>
     $(document).ready(function () {
       setTimeout(function () {
+        document.getElementById("myToast").classList.remove('hide');
         $("#myToast").toast('show');
-      }, 5000);
+      }, 10000);
     });
   </script>
 
@@ -218,7 +219,7 @@
   </nav>
 
   <!-- Whatsapp Toast -->
-  <div class="toast" id="myToast" style="position: fixed; bottom: 10px; right: 20px; z-index: 99999;"
+  <div class="toast hide" id="myToast" style="position: fixed; bottom: 10px; right: 20px; z-index: 99;"
     data-autohide="false">
     <div class="toast-header">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp"
