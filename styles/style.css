@@ -86,3 +86,7 @@ section {
 .container-85 {
     width: 85%;
 }
+
+#submit-button {
+    cursor: not-allowed;
+}

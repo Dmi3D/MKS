@@ -34,6 +34,74 @@
     });
   </script>
 
+  <!-- Script to submit form to AWS API Gateway -->
+  <script>
+    function submitToAPI(e) {
+      e.preventDefault();
+
+      var subject = $("#subject-input").val();
+      var message = $("#message-input").val();
+      var name = $("#name-input").val();
+      var email = $("#email-input").val();
+      var phone = $("#phone-input").val();
+      var preference = $('input[name="pref-contact"]:checked').val();
+      var address = $("#address-input").val();
+      var address2 = $("#address2-input").val();
+      var city = $("#city-input").val();
+      var county = $("#county-input").val();
+      var eircode = $("#eircode-input").val();
+      var recaptcha = new FormData(document.getElementById('contact-form')).get('g-recaptcha-response');
+      // var file = document.getElementById('file-input').files[0];
+
+      var data = {
+        subject: subject,
+        message: message,
+        name: name,
+        email: email,
+        phone: phone,
+        preference: preference,
+        address: address,
+        address2: address2,
+        city: city,
+        county: county,
+        eircode: eircode,
+        recaptcha: recaptcha
+      };
+
+      $.ajax({
+        type: "POST",
+        url: "https://2pfcxxjfof.execute-api.eu-west-1.amazonaws.com/live",
+        dataType: "json",
+        crossDomain: "true",
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(data),
+
+        success: function () {
+          // clear form and show a success message
+          alert("Email sent succesfully");
+          document.getElementById("contact-form").reset();
+          location.reload();
+        },
+        error: function () {
+          // show an error message
+          alert("Please verify your input and try again");
+        }
+      });
+    }
+  </script>
+
+  <!-- Google reCAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  <!-- Google reCAPTCHA unlocking submit button -->
+  <script>
+    function recaptchaCallback() {
+      var submit = document.querySelector("#submit-button");
+      submit.removeAttribute('disabled');
+      submit.style.cursor = 'pointer';
+    }
+  </script>
+
   <title>MKS</title>
 </head>
 
@@ -70,7 +138,7 @@
             <path
               d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
           </svg>
-          <a href="mailto: contact@mks-solutions.ie" class="text-light ml-2">Email</a>
+          <a href="mailto: contact@mks-solutions.ie" class="text-light ml-2">info@mks-limited.ie</a>
         </div>
       </div>
 
@@ -461,7 +529,6 @@
             <li>Double or Tripple Glazed Units</li>
             <li>Heat Reflective Glass</li>
             <li>A Rated for Enhanced Energy Efficiency</li>
-            <li>Popular Composite Range</li>
           </ul>
           <p class="lead text-light">Our windows are disigned to fit your requirements and are best styled to suit your
             home.</p>
@@ -476,14 +543,14 @@
         <!-- Insulation Information -->
         <div class="col-md-7">
           <h2 class="text-light">Insulation Services. <span class="text-muted">Improve your BER.</span></h2>
-          <p class="lead text-light">For years we have replaced and repairs windows and doors in order to improve home
+          <p class="lead text-light">For years we have replaced and repaired windows and doors in order to improve home
             energy ratings.</p>
           <p class="lead text-light">But, we have discovered that the roof and walls lose over half the heat to the
             outside.</p>
           <ul class="lead text-light">
-            <li>25% of heat is lost via the roof</li>
+            <li>25% of heat is lost through the roof</li>
             <li>35% of heat is lost via the walls</li>
-            <li>40% of heat is lost via the windows and doors</li>
+            <li>40% of heat is lost due to windows and doors</li>
           </ul>
           <p class="lead text-light">To tackle this, we offer a <strong>complete internal insulation service</strong>,
             using</p>
@@ -588,7 +655,7 @@
 
           <!-- Name -->
           <div class="form-group col-md-6">
-            <label for="name">Name</label>
+            <label for="name-input">Name</label>
             <div class="input-group-prepend">
               <div class="input-group-text input-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -596,13 +663,13 @@
                   <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                 </svg>
               </div>
-              <input type="text" class="form-control input-with-icon" id="name" placeholder="Name">
+              <input type="text" class="form-control input-with-icon" id="name-input" placeholder="Name">
             </div>
           </div>
 
           <!-- Email -->
           <div class="form-group col-md-6">
-            <label for="email">Email</label>
+            <label for="email-input">Email</label>
             <div class="input-group-prepend">
               <div class="input-group-text input-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -611,7 +678,7 @@
                     d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
                 </svg>
               </div>
-              <input type="email" class="form-control input-with-icon" id="email" placeholder="Email">
+              <input type="email" class="form-control input-with-icon" id="email-input" placeholder="Email">
             </div>
           </div>
         </div>
@@ -621,7 +688,7 @@
 
           <!-- Telephone -->
           <div class="form-group col-md-6">
-            <label for="telephone">Telephone</label>
+            <label for="phone-input">Telephone</label>
             <div class="input-group-prepend">
               <div class="input-group-text input-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -630,13 +697,13 @@
                     d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
                 </svg>
               </div>
-              <input type="tel" class="form-control input-with-icon" id="telephone" placeholder="Telephone">
+              <input type="tel" class="form-control input-with-icon" id="phone-input" placeholder="Telephone">
             </div>
           </div>
 
           <!-- Subject -->
           <div class="form-group col-md-6">
-            <label for="subject">Subject</label>
+            <label for="subject-input">Subject</label>
             <div class="input-group-prepend">
               <div class="input-group-text input-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tools"
@@ -645,13 +712,13 @@
                     d="M1 0L0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.356 3.356a1 1 0 0 0 1.414 0l1.586-1.586a1 1 0 0 0 0-1.414l-3.356-3.356a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0zm9.646 10.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708zM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11z" />
                 </svg>
               </div>
-              <select class="form-control input-with-icon" id="subject">
+              <select class="form-control input-with-icon" id="subject-input">
                 <option selected>Choose...</option>
-                <option value="doors">Doors</option>
-                <option value="windows">Windows</option>
-                <option value="insulation">Insulation</option>
-                <option value="services">Service or Repairs</option>
-                <option value="other">Other</option>
+                <option value="Doors">Doors</option>
+                <option value="Windows">Windows</option>
+                <option value="Insulation">Insulation</option>
+                <option value="Services">Service or Repairs</option>
+                <option value="Other">Other</option>
               </select>
             </div>
           </div>
@@ -659,31 +726,32 @@
 
         <!-- Method of Contact -->
         <fieldset class="form-group">
-          <legend class="col-form-label">Prefered Method of Contact</legend>
+          <legend class="col-form-label">Preferred Method of Contact</legend>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="pref_contact" id="pref_phone" value="phone">
+            <input class="form-check-input" type="radio" name="pref-contact" id="pref-phone" value="Phone">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
               class="bi bi-telephone-fill" viewBox="0 0 16 16">
               <path fill-rule="evenodd"
                 d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
             </svg>
-            <label class="form-check-label ml-1" for="pref_phone">
+            <label class="form-check-label ml-1" for="pref-phone">
               Phone
             </label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="pref_contact" id="pref_email" value="email">
+            <input class="form-check-input" type="radio" name="pref-contact" id="pref-email" value="Email">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
               class="bi bi-envelope-fill" viewBox="0 0 16 16">
               <path
                 d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
             </svg>
-            <label class="form-check-label ml-1" for="pref_email">
+            <label class="form-check-label ml-1" for="pref-email">
               Email
             </label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="pref_contact" id="pref_either" value="either" checked>
+            <input class="form-check-input" type="radio" name="pref-contact" id="pref-either" value="Phone and Email"
+              checked>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
               class="bi bi-telephone-fill" viewBox="0 0 16 16">
               <path fill-rule="evenodd"
@@ -694,7 +762,7 @@
               <path
                 d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
             </svg>
-            <label class="form-check-label ml-1" for="pref_either">
+            <label class="form-check-label ml-1" for="pref-either">
               Either
             </label>
           </div>
@@ -702,21 +770,21 @@
 
         <!-- Message -->
         <div class="form-group">
-          <label for="message">Message</label>
-          <textarea class="form-control input-more-round" id="message" rows="5"
+          <label for="message-input">Message</label>
+          <textarea class="form-control input-more-round" id="message-input" rows="5"
             placeholder="Hello. I am enquiring about my..."></textarea>
         </div>
 
         <!-- Address -->
         <div class="form-group">
-          <label for="address">Address</label>
-          <input type="text" class="form-control input-more-round" id="address" placeholder="Address Line 1">
+          <label for="address-input">Address</label>
+          <input type="text" class="form-control input-more-round" id="address-input" placeholder="Address Line 1">
         </div>
 
         <!-- Address 2 -->
         <div class="form-group">
-          <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-          <input type="text" class="form-control input-more-round" id="address2" placeholder="Address Line 2">
+          <label for="address2-input">Address 2 <span class="text-muted">(Optional)</span></label>
+          <input type="text" class="form-control input-more-round" id="address2-input" placeholder="Address Line 2">
         </div>
 
         <!-- City & County & Eircode Row -->
@@ -724,61 +792,72 @@
 
           <!-- City -->
           <div class="form-group col-md-6">
-            <label for="city">City or Town</label>
-            <input type="text" class="form-control input-more-round" id="city" placeholder="City">
+            <label for="city-input">City or Town</label>
+            <input type="text" class="form-control input-more-round" id="city-input" placeholder="City">
           </div>
           <div class="form-group col-md-4">
-            <label for="county">County</label>
+            <label for="county-input">County</label>
             <div class="input-group-prepend">
               <div class="input-group-text input-icon">Co.</div>
-              <select id="county" class="form-control input-with-icon">
+              <select id="county-input" class="form-control input-with-icon">
                 <option selected>Choose...</option>
-                <option value="antrim">Antrim</option>
-                <option value="armagh">Armagh</option>
-                <option value="carlow">Carlow</option>
-                <option value="cavan">Cavan</option>
-                <option value="clare">Clare</option>
-                <option value="cork">Cork</option>
-                <option value="derry">Derry</option>
-                <option value="donegal">Donegal</option>
-                <option value="down">Down</option>
-                <option value="dublin">Dublin</option>
-                <option value="fermanagh">Fermanagh</option>
-                <option value="galway">Galway</option>
-                <option value="kerry">Kerry</option>
-                <option value="kildare">Kildare</option>
-                <option value="kilkenny">Kilkenny</option>
-                <option value="laois">Laois</option>
-                <option value="leitrim">Leitrim</option>
-                <option value="limerick">Limerick</option>
-                <option value="longford">Longford</option>
-                <option value="louth">Louth</option>
-                <option value="mayo">Mayo</option>
-                <option value="meath">Meath</option>
-                <option value="monaghan">Monaghan</option>
-                <option value="offaly">Offaly</option>
-                <option value="roscommon">Roscommon</option>
-                <option value="sligo">Sligo</option>
-                <option value="tipperary">Tipperary</option>
-                <option value="tyrone">Tyrone</option>
-                <option value="waterford">Waterford</option>
-                <option value="westmeath">Westmeath</option>
-                <option value="wexford">Wexford</option>
-                <option value="wicklow">Wicklow</option>
+                <option value="Antrim">Antrim</option>
+                <option value="Armagh">Armagh</option>
+                <option value="Carlow">Carlow</option>
+                <option value="Cavan">Cavan</option>
+                <option value="Clare">Clare</option>
+                <option value="Cork">Cork</option>
+                <option value="Derry">Derry</option>
+                <option value="Donegal">Donegal</option>
+                <option value="Down">Down</option>
+                <option value="Dublin">Dublin</option>
+                <option value="Fermanagh">Fermanagh</option>
+                <option value="Galway">Galway</option>
+                <option value="Kerry">Kerry</option>
+                <option value="Kildare">Kildare</option>
+                <option value="Kilkenny">Kilkenny</option>
+                <option value="Laois">Laois</option>
+                <option value="Leitrim">Leitrim</option>
+                <option value="Limerick">Limerick</option>
+                <option value="Longford">Longford</option>
+                <option value="Louth">Louth</option>
+                <option value="Mayo">Mayo</option>
+                <option value="Meath">Meath</option>
+                <option value="Monaghan">Monaghan</option>
+                <option value="Offaly">Offaly</option>
+                <option value="Roscommon">Roscommon</option>
+                <option value="Sligo">Sligo</option>
+                <option value="Tipperary">Tipperary</option>
+                <option value="Tyrone">Tyrone</option>
+                <option value="Waterford">Waterford</option>
+                <option value="Westmeath">Westmeath</option>
+                <option value="Wexford">Wexford</option>
+                <option value="Wicklow">Wicklow</option>
               </select>
             </div>
           </div>
           <div class="form-group col-md-2">
-            <label for="eircode">Eircode</label>
-            <input type="text" class="form-control input-more-round" id="eircode" placeholder="Eircode">
+            <label for="eircode-input">Eircode</label>
+            <input type="text" class="form-control input-more-round" id="eircode-input" placeholder="Eircode">
           </div>
         </div>
 
         <!-- Upload File -->
-        <div class="form-group">
-          <label for="file">Upload file</label>
-          <input type="file" class="form-control-file " id="file">
+        <!-- <div class="form-group">
+          <label for="file-input">Upload file</label>
+          <input type="file" class="form-control-file" id="file-input">
+        </div> -->
+
+        <!-- Recaptcha -->
+        <div class="form-group mt-2">
+          <div class="g-recaptcha" data-sitekey="6LeTXmoaAAAAAJzpn1fyOCIOLvxfnsraYcQUbFp-" data-callback="recaptchaCallback"></div>
         </div>
+
+        <!-- Submit -->
+        <div class="form-group mt-4">
+          <button id="submit-button" type="button" onClick="submitToAPI(event)" class="btn btn-info btn-block" disabled>Submit</button>
+        </div>
+
       </form>
     </div>
   </section>
@@ -798,7 +877,7 @@
               d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
           </svg>
           <a class="ml-1 text-light" style="font-style: italic;" href="https://www.linkedin.com/in/dmitriy-dranko/">Made
-            by Dmitriy Dranko</a>
+            by Dmitriy</a>
         </div>
 
         <!-- Copyright -->
