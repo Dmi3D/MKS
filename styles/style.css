@@ -63,6 +63,11 @@ section {
     border-radius: 10px 10px 10px 10px;
 }
 
+.form-group.required .control-label:after {
+    content:"*";
+    color:red;
+  }
+
 .carousel-fade .carousel-item {
 	opacity: 0;
 	transition-duration: 2s;
