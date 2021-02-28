@@ -202,22 +202,22 @@
     <!-- Navbar items -->
     <div class="collapse navbar-collapse" id="mainNav">
       <ul class="navbar-nav ml-auto text-center mt-3 mt-md-0">
-        <li class="nav-item px-2">
+        <li class="nav-item px-2" data-toggle="collapse" data-target=".navbar-collapse.show">
           <a class="text-large nav-link active text-uppercase" href="#top">Home</a>
         </li>
-        <li class="nav-item px-2">
+        <li class="nav-item px-2" data-toggle="collapse" data-target=".navbar-collapse.show">
           <a class="text-large nav-link text-uppercase" href="#door">Doors</a>
         </li>
-        <li class="nav-item px-2">
+        <li class="nav-item px-2" data-toggle="collapse" data-target=".navbar-collapse.show">
           <a class="text-large nav-link text-uppercase" href="#window">Windows</a>
         </li>
-        <li class="nav-item px-2">
+        <li class="nav-item px-2" data-toggle="collapse" data-target=".navbar-collapse.show">
           <a class="text-large nav-link text-uppercase" href="#insulation">Insulation</a>
         </li>
-        <li class="nav-item px-2">
+        <li class="nav-item px-2" data-toggle="collapse" data-target=".navbar-collapse.show">
           <a class="text-large nav-link text-uppercase" href="#services">Services</a>
         </li>
-        <li class="nav-item px-2">
+        <li class="nav-item px-2" data-toggle="collapse" data-target=".navbar-collapse.show">
           <a class="text-large nav-link text-uppercase" href="#quote">Quote</a>
         </li>
       </ul>
@@ -263,10 +263,11 @@
         <div class="carousel-item active">
           <img class="carousel-image d-block w-100" src="./images/carousel/carousel1doors.png" alt="First slide"
             height="350">
-              <div class="carousel-caption text-center text-uppercase">
-                <h1 class="carousel-heading mb-5 mb-md-0">Door Replacements</h1>
-                <p class="d-none d-md-block">All doors come in a large variety of colours and styles, you certainly won't be disappointed</p>
-              </div>
+          <div class="carousel-caption text-center text-uppercase">
+            <h1 class="carousel-heading mb-5 mb-md-0">Door Replacements</h1>
+            <p class="d-none d-md-block">All doors come in a large variety of colours and styles, you certainly won't be
+              disappointed</p>
+          </div>
         </div>
 
         <!-- Windows Carousel -->
@@ -275,7 +276,8 @@
             height="350">
           <div class="carousel-caption text-center text-uppercase">
             <h1 class="carousel-heading mb-5 mb-md-0">Window Replacements</h1>
-            <p class="d-none d-md-block">Completely transform your home, enhance your homes energy rating, and most importantly, improve your
+            <p class="d-none d-md-block">Completely transform your home, enhance your homes energy rating, and most
+              importantly, improve your
               security</p>
           </div>
         </div>
@@ -286,7 +288,8 @@
             height="350">
           <div class="carousel-caption text-center text-uppercase">
             <h1 class="carousel-heading mb-5 mb-md-0">Insulation Services</h1>
-            <p class="d-none d-md-block">We offer a complete internal insulation service, using fibre glass and polyurethane insulation</p>
+            <p class="d-none d-md-block">We offer a complete internal insulation service, using fibre glass and
+              polyurethane insulation</p>
           </div>
         </div>
 
@@ -296,7 +299,8 @@
             height="350">
           <div class="carousel-caption text-center text-uppercase">
             <h1 class="carousel-heading mb-5 mb-md-0">Service and Repairs</h1>
-            <p class="d-none d-md-block">Unfortunately over time, standard wear and tear has a negative effect on doors and windows</p>
+            <p class="d-none d-md-block">Unfortunately over time, standard wear and tear has a negative effect on doors
+              and windows</p>
           </div>
         </div>
       </div>
@@ -855,12 +859,14 @@
 
         <!-- Recaptcha -->
         <div class="form-group mt-2">
-          <div class="g-recaptcha" data-sitekey="6LeTXmoaAAAAAJzpn1fyOCIOLvxfnsraYcQUbFp-" data-callback="recaptchaCallback"></div>
+          <div class="g-recaptcha" data-sitekey="6LeTXmoaAAAAAJzpn1fyOCIOLvxfnsraYcQUbFp-"
+            data-callback="recaptchaCallback"></div>
         </div>
 
         <!-- Submit -->
         <div class="form-group mt-4">
-          <button id="submit-button" type="button" onClick="submitToAPI(event)" class="btn btn-info btn-block" disabled>Submit</button>
+          <button id="submit-button" type="button" onClick="submitToAPI(event)" class="btn btn-info btn-block"
+            disabled>Submit</button>
         </div>
 
       </form>
