@@ -31,7 +31,13 @@ hr {
 
 .carousel-caption {
     text-shadow: 2px 2px 5px  black;
+    left: 0%;
+    right: 0%;
 } 
+
+.carousel-heading {
+    font-size: 50px;
+}
 
 section {
     scroll-margin-top: 150px;
