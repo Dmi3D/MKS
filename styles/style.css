@@ -40,7 +40,8 @@ hr {
 }
 
 section {
-    scroll-margin-top: 150px;
+    padding-top: 150px;
+    margin-top: -150px;
 }
 
 .button-icon {
