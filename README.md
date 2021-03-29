@@ -75,7 +75,8 @@ The website was developed with SEO in mind by incorporating
 * **AWS Cloudfront CDNs** to reduce latency between the server and the user, thus decreasing load times
 * **ETag HTTP Header** to identify the specific version of the resource in regards to caching
 * **Cache-Control Header** in order to specify browser caching policies
-    * `max-age=31536000, no-cache` to cache content for a year and only download specific content which is new/updates
+    * `max-age=31536000, no-cache` to cache content for a year and only download specific content which is new/updated
+* `loading="lazy"` on images other than the carousel in order to prevent loading images outside of the field of view until the page content is finished loading
 
 ### Google PageSpeed Insights Results
 
