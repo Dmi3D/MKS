@@ -102,3 +102,7 @@ section {
 #submit-button {
     cursor: not-allowed;
 }
+
+.logo {
+    height: 100%;
+}
