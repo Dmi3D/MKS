@@ -60,7 +60,7 @@ https://www.freeformatter.com/html-validator.html
 
 https://html5.validator.nu/
 
-## SEO
+## SEO (Page Optimization)
 The website was developed with SEO in mind by incorporating
 * **GZIP Compression** to reduce the load size and to decrease load time
 * **Modern WebP image formats** to provide low image sizes to decrease load time
@@ -73,6 +73,9 @@ The website was developed with SEO in mind by incorporating
 * A focus on **keywords** when writing the site's content in order to target search queries more effectively
 * **XML Sitemap** to allow search engines to crawl the site more efficiently
 * **AWS Cloudfront CDNs** to reduce latency between the server and the user, thus decreasing load times
+* **ETag HTTP Header** to identify the specific version of the resource in regards to caching
+* **Cache-Control Header** in order to specify browser caching policies
+    * `max-age=31536000, no-cache` to cache content for a year and only download specific content which is new/updates
 
 ### Google PageSpeed Insights Results
 
@@ -84,6 +87,8 @@ Munster Joinery             |  DK Windows               | Signature Windows
 :-------------------------:|:-------------------------:|:-------------------------:
 ![image](https://user-images.githubusercontent.com/46572996/112718819-5175cc80-8eed-11eb-8d4e-0ad1e77bc93d.png)  |  ![image](https://user-images.githubusercontent.com/46572996/112718841-84b85b80-8eed-11eb-9acf-364033884e1d.png) | ![image](https://user-images.githubusercontent.com/46572996/112718914-e973b600-8eed-11eb-8d2e-7849fc434b82.png)
 
+### GTmetrix Results
+![image](https://user-images.githubusercontent.com/46572996/112826726-4655a480-9085-11eb-8af5-835b3a920c15.png)
 
 ## Trello: 
 https://trello.com/b/WI9wqS30/mks
